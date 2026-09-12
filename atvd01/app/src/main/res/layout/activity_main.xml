@@ -1,78 +1,248 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+<androidx.core.widget.NestedScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    android:fillViewport="true">
 
-    <View
-        android:id="@+id/Box"
-        android:layout_width="392dp"
-        android:layout_height="215dp"
-        android:background="@drawable/box_personalizado"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.473"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.063" />
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/main"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingBottom="32dp"
+        tools:context=".MainActivity">
 
-    <TextView
-        android:id="@+id/title"
-        android:layout_width="110dp"
-        android:layout_height="30dp"
-        android:fontFamily="sans-serif-black"
-        android:text="INTENTS"
-        android:textAlignment="center"
-        android:textSize="25dp"
-        app:layout_constraintBottom_toBottomOf="@+id/Box"
-        app:layout_constraintEnd_toEndOf="@+id/Box"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="@+id/Box"
-        app:layout_constraintTop_toTopOf="@+id/Box"
-        app:layout_constraintVertical_bias="0.093" />
+        <!--  Box customizável em box_personalizado.xml  -->
 
-    <TextView
-        android:id="@+id/intents"
-        android:layout_width="359dp"
-        android:layout_height="112dp"
-        android:justificationMode="inter_word"
-        android:text="Intent é um objeto usado no Android para fazer a comunicação entre diferentes partes do aplicativo. Com ele, dá para abrir outra Activity, iniciar alguma ação ou passar informações de uma tela para outra. Também pode ser usado para abrir recursos de outros aplicativos, como o navegador, a câmera ou o e-mail."
-        app:layout_constraintBottom_toBottomOf="@+id/Box"
-        app:layout_constraintEnd_toEndOf="@+id/Box"
-        app:layout_constraintHorizontal_bias="0.588"
-        app:layout_constraintStart_toStartOf="@+id/Box"
-        app:layout_constraintTop_toBottomOf="@+id/title"
-        app:layout_constraintVertical_bias="0.289" />
+        <View
+            android:id="@+id/Box"
+            android:layout_width="0dp"
+            android:layout_height="215dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="32dp"
+            android:layout_marginEnd="16dp"
+            android:background="@drawable/box_personalizado"
 
-    <Button
-        android:id="@+id/button1"
-        android:layout_width="150dp"
-        android:layout_height="150dp"
-        android:text="Button"
-        android:background="@drawable/botao_personalizado"
-        android:backgroundTint="@null"
-        app:backgroundTint="@null"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/button2"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/Box" />
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
-    <Button
-        android:id="@+id/button2"
-        android:layout_width="150dp"
-        android:layout_height="150dp"
-        android:text="Button"
-        android:background="@drawable/botao_personalizado"
-        android:backgroundTint="@null"
-        app:backgroundTint="@null"
-        app:layout_constraintBottom_toBottomOf="@+id/button1"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/button1"
-        app:layout_constraintTop_toTopOf="@+id/button1" />
+        <!--  Título 1  -->
+        <TextView
+            android:id="@+id/title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:fontFamily="sans-serif-black"
+            android:text="INTENTS"
+            android:textAlignment="center"
+            android:textSize="25sp"
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+            app:layout_constraintStart_toStartOf="@id/Box"
+            app:layout_constraintEnd_toEndOf="@id/Box"
+            app:layout_constraintTop_toTopOf="@id/Box" />
+
+        <!--  Explicação de intents no gereal  -->
+        <TextView
+            android:id="@+id/intents"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="16dp"
+            android:justificationMode="inter_word"
+            android:text="Intent é um objeto usado no Android para fazer a comunicação entre diferentes partes do aplicativo. Com ele, dá para abrir outra Activity, iniciar alguma ação ou passar informações de uma tela para outra. Também pode ser usado para abrir recursos de outros aplicativos, como o navegador, a câmera ou o e-mail."
+
+            app:layout_constraintStart_toStartOf="@id/Box"
+            app:layout_constraintEnd_toEndOf="@id/Box"
+            app:layout_constraintTop_toBottomOf="@id/title" />
+            <!--  Fim do box personalizado  -->
+
+        <!--  Título 2  -->
+        <TextView
+            android:id="@+id/TypesIntents"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="40dp"
+            android:fontFamily="sans-serif-black"
+            android:text="TIPOS DE INTENTS"
+            android:textAlignment="center"
+            android:textSize="25sp"
+
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/Box" />
+
+        <!--  Título Explícitas  -->
+        <TextView
+            android:id="@+id/ExplictIntent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="32dp"
+            android:fontFamily="sans-serif-black"
+            android:text="Intents explícitas"
+
+            android:textAlignment="center"
+            android:textSize="20sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.062"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/TypesIntents" />
+
+        <!--  Explicação intents explícitas  -->
+        <TextView
+            android:id="@+id/explict"
+            android:layout_width="350dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="28dp"
+            android:justificationMode="inter_word"
+
+            android:text="Uma Intent explícita é usada quando você sabe exatamente qual componente deseja abrir.\n\n[Digita aqui o que quiser depois sobre exemplos e etc]\n\n[Pode usar o espaço para fazer o que quiser também, só adicionar o que precisa ou então levar para outra Activity]"
+
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.491"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/ExplictIntent" />
+
+        <!--  Botão de exemplo para executar exemplo  -->
+        <Button
+            android:id="@+id/ExplicitIntentButton"
+            android:layout_width="330dp"
+            android:layout_height="50dp"
+            android:layout_marginTop="30dp"
+            android:text="[Botão para executar exemplo]"
+            android:background="@drawable/botao_personalizado"
+            android:backgroundTint="@null"
+            app:backgroundTint="@null"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/explict" />
+
+        <!--  Título Implícitas -->
+        <TextView
+            android:id="@+id/implicitIntent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="28dp"
+            android:fontFamily="sans-serif-black"
+
+            android:text="Intents explícitas"
+            android:textAlignment="center"
+            android:textSize="20sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.062"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/ExplicitIntentButton" />
+
+        <!--  Explicação Intents Implícitas  -->
+        <TextView
+            android:id="@+id/implicit"
+            android:layout_width="350dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="28dp"
+            android:justificationMode="inter_word"
+
+            android:text="Uma Intent implícita é utilizada quando não especificamos exatamente qual aplicativo ou componente deverá executar a ação."
+
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.491"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/implicitIntent" />
+
+        <!--  Aviso de exemplo  -->
+        <TextView
+            android:id="@+id/TextoExemplo"
+            android:layout_width="350dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="28dp"
+            android:justificationMode="inter_word"
+            android:textStyle="bold"
+
+            android:text="Exemplo prático: Compartilhar uma mensagem para outro aplicativo"
+
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.491"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/implicit" />
+
+        <!-- Botão de refresh para frases aleatórias -->
+
+        <!--  Campo de Texto editável  -->
+
+        <!--  Botão de compartilhar  -->
+
+        <ImageButton
+            android:id="@+id/refreshButton"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginStart="264dp"
+            android:layout_marginTop="16dp"
+            android:background="@android:color/transparent"
+            android:paddingLeft="10dp"
+            android:paddingTop="20dp"
+            android:scaleType="fitCenter"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/clearButton"
+            app:layout_constraintTop_toBottomOf="@+id/TextoExemplo"
+            app:srcCompat="@drawable/refresh_icon" />
+
+        <ImageButton
+            android:id="@+id/clearButton"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:background="@android:color/transparent"
+            android:paddingLeft="10dp"
+            android:paddingTop="17dp"
+            android:scaleType="fitCenter"
+            app:layout_constraintBottom_toBottomOf="@+id/refreshButton"
+            app:layout_constraintEnd_toStartOf="@+id/refreshButton"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/refreshButton"
+            app:layout_constraintVertical_bias="1.0"
+            app:srcCompat="@drawable/close_icon" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/textInputLayout"
+            android:layout_width="370dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.606"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/refreshButton">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/editText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Texto personalizado" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <Button
+            android:id="@+id/ShareButton"
+            android:padding="2dp"
+            android:layout_width="110dp"
+            android:layout_height="40dp"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="30dp"
+            android:layout_marginEnd="24dp"
+            android:layout_marginBottom="32dp"
+            android:background="@drawable/botao_personalizado"
+            android:backgroundTint="@null"
+            android:text="Compartilhar"
+
+            app:backgroundTint="@null"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textInputLayout"
+            app:layout_constraintVertical_bias="1.0" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.core.widget.NestedScrollView>
