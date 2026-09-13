@@ -60,29 +60,38 @@ public class MainActivity extends AppCompatActivity {
             tInput.setText("");
         });
 
+//        Botão de compartilhar
         shareB.setOnClickListener(v -> {
+            /*Preparação da mensagem personalizada*/
             String mensagem = tInput.getText().toString() + "\n\n\nMensagem enviada do appzin maldito";
 
+            /*Chamada da função para preparação do gif*/
             Uri gifUri = prepararGif();
 
+            /*Preparando a intent para abrir um app externo*/
             Intent intent = new Intent(Intent.ACTION_SEND);
 
+            /*Tipo de mensagem que vai ser enviada na intent*/
             intent.setType("image/gif");
 
+            /*Dados que a intent vai enviar*/
             intent.putExtra(
                     Intent.EXTRA_TEXT,
                     mensagem
             );
 
+            /*Dados que a intent vai enviar*/
             intent.putExtra(
                     Intent.EXTRA_STREAM,
                     gifUri
             );
 
+            /*Permissão para outros apps lerem os arquivos que vão ser enviados*/
             intent.addFlags(
                     Intent.FLAG_GRANT_READ_URI_PERMISSION
             );
 
+            /*Abre a tela de compartilhamento*/
             startActivity(
                     Intent.createChooser(
                             intent,
@@ -92,6 +101,7 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
+        /*Função para poder transformar o gif num arquivo que a intent possa enviar junto*/
     private Uri prepararGif() {
 
         try {

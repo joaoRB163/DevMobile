@@ -169,11 +169,6 @@
             app:layout_constraintTop_toBottomOf="@+id/implicit" />
 
         <!-- Botão de refresh para frases aleatórias -->
-
-        <!--  Campo de Texto editável  -->
-
-        <!--  Botão de compartilhar  -->
-
         <ImageButton
             android:id="@+id/refreshButton"
             android:layout_width="50dp"
@@ -189,6 +184,7 @@
             app:layout_constraintTop_toBottomOf="@+id/TextoExemplo"
             app:srcCompat="@drawable/refresh_icon" />
 
+        <!--  Botão de limpar texto  -->
         <ImageButton
             android:id="@+id/clearButton"
             android:layout_width="50dp"
@@ -205,6 +201,7 @@
             app:layout_constraintVertical_bias="1.0"
             app:srcCompat="@drawable/close_icon" />
 
+        <!--  Campo de Texto editável  -->
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/textInputLayout"
             android:layout_width="370dp"
@@ -222,6 +219,7 @@
                 android:hint="Texto personalizado" />
         </com.google.android.material.textfield.TextInputLayout>
 
+        <!--  Botão de compartilhar  -->
         <Button
             android:id="@+id/ShareButton"
             android:padding="2dp"
