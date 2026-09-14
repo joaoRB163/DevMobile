@@ -2,4 +2,24 @@
 <resources>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+
+    <!-- Fundo -->
+    <color name="background_dark">#0F0B17</color>
+
+    <!-- Cards -->
+    <color name="surface_dark">#191225</color>
+    <color name="surface_light">#241832</color>
+
+    <!-- Roxos -->
+    <color name="purple_primary">#7C3AED</color>
+    <color name="purple_light">#A78BFA</color>
+    <color name="purple_neon">#C084FC</color>
+    <color name="purple_dark">#4C1D95</color>
+
+    <!-- Textos -->
+    <color name="text_primary">#F8F7FC</color>
+    <color name="text_secondary">#C9C3D4</color>
+    <color name="text_muted">#938AA3</color>
+
+    <color name="border_purple">#5B21B6</color>
 </resources>

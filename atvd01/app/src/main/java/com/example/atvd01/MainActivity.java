@@ -44,10 +44,11 @@ public class MainActivity extends AppCompatActivity {
 
         Button shareB = findViewById(R.id.ShareButton);
 
-        ImageButton refreshB = findViewById(R.id.refreshButton);
-        ImageButton clearB = findViewById(R.id.clearButton);
+        Button refreshB = findViewById(R.id.refreshButton);
 
         TextInputEditText tInput = findViewById(R.id.editText);
+
+        Button explicitIntentButton = findViewById(R.id.ExplicitIntentButton);
 
 
         Random r = new Random();
@@ -56,8 +57,21 @@ public class MainActivity extends AppCompatActivity {
             tInput.setText(frases[r.nextInt(frases.length)]);
         });
 
-        clearB.setOnClickListener(v -> {
-            tInput.setText("");
+
+        // Exemplo Intent Explicita
+        explicitIntentButton.setOnClickListener(v -> {
+            // Cria uma intent apontando diretamente para outra activity
+            Intent intent = new Intent(
+                    MainActivity.this,
+                    ExemploActivityExplicita.class
+            );
+            //Envia uma mensagem para outra Activity de Exemplo
+            intent.putExtra(
+                    "mensagem",
+                    "Esta mensagem foi enviada pela MainActivity!"
+            );
+            //Abre a Activity escolhida
+            startActivity(intent);
         });
 
 //        Botão de compartilhar
@@ -101,7 +115,7 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
-        /*Função para poder transformar o gif num arquivo que a intent possa enviar junto*/
+    /*Função para poder transformar o gif num arquivo que a intent possa enviar junto*/
     private Uri prepararGif() {
 
         try {

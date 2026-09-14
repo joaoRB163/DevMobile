@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background_dark"
+    android:padding="24dp">
+
+
+    <!-- Pequeno indicador superior -->
+
+    <TextView
+        android:id="@+id/status"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        android:text="●  ACTIVITY INICIADA"
+        android:textColor="@color/purple_light"
+        android:textSize="12sp"
+        android:textStyle="bold"
+        android:letterSpacing="0.1"
+
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+
+        android:layout_marginTop="30dp" />
+
+
+    <!-- Título -->
+
+    <TextView
+        android:id="@+id/tituloExplicita"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+
+        android:text="INTENT\nEXPLÍCITA"
+        android:textColor="@color/text_primary"
+        android:textSize="34sp"
+        android:textStyle="bold"
+        android:fontFamily="sans-serif-black"
+
+        android:layout_marginTop="14dp"
+
+        app:layout_constraintTop_toBottomOf="@id/status"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+
+    <!-- Descrição -->
+
+    <TextView
+        android:id="@+id/descricaoExplicita"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+
+        android:layout_marginTop="18dp"
+
+        android:text="Esta Activity foi aberta diretamente pela MainActivity através de uma Intent explícita."
+        android:textColor="@color/text_secondary"
+        android:textSize="16sp"
+        android:lineSpacingExtra="4dp"
+
+        app:layout_constraintTop_toBottomOf="@id/tituloExplicita"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+
+    <!-- Card da mensagem -->
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/cardMensagem"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+
+        android:layout_marginTop="32dp"
+
+        app:cardBackgroundColor="@color/surface_dark"
+        app:cardCornerRadius="20dp"
+        app:cardElevation="0dp"
+        app:strokeColor="@color/purple_primary"
+        app:strokeWidth="1dp"
+
+        app:layout_constraintTop_toBottomOf="@id/descricaoExplicita"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+            android:orientation="vertical"
+            android:padding="22dp">
+
+
+            <TextView
+                android:id="@+id/labelMensagem"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:text="DADO RECEBIDO"
+                android:textColor="@color/purple_light"
+                android:textStyle="bold"
+                android:textSize="12sp"
+                android:letterSpacing="0.1" />
+
+
+            <TextView
+                android:id="@+id/mensagemRecebida"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+
+                android:layout_marginTop="14dp"
+
+                android:text="Mensagem"
+                android:textColor="@color/text_primary"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:lineSpacingExtra="4dp" />
+
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+
+                android:layout_marginTop="18dp"
+
+                android:text="✓ Informação recebida através de intent.putExtra()"
+                android:textColor="@color/text_muted"
+                android:textSize="13sp" />
+
+        </LinearLayout>
+
+    </com.google.android.material.card.MaterialCardView>
+
+
+    <!-- Explicação visual -->
+
+    <TextView
+        android:id="@+id/fluxo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        android:layout_marginTop="26dp"
+
+        android:text="MainActivity  →  ExemploActivityExplicita"
+        android:textColor="@color/purple_neon"
+        android:textSize="13sp"
+        android:textStyle="bold"
+
+        app:layout_constraintTop_toBottomOf="@id/cardMensagem"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+
+    <!-- Botão voltar -->
+
+    <Button
+        android:id="@+id/voltarButton"
+        android:layout_width="0dp"
+        android:layout_height="54dp"
+
+        android:layout_marginTop="32dp"
+
+        android:background="@drawable/button_purple"
+        android:backgroundTint="@null"
+
+        android:text="←  VOLTAR"
+        android:textColor="@color/white"
+        android:textStyle="bold"
+
+        app:backgroundTint="@null"
+
+        app:layout_constraintTop_toBottomOf="@id/fluxo"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

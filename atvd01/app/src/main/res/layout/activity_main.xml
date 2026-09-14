@@ -3,244 +3,290 @@
 <androidx.core.widget.NestedScrollView
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/background_dark"
     android:fillViewport="true">
 
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/main"
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:paddingBottom="32dp"
-        tools:context=".MainActivity">
+        android:orientation="vertical"
+        android:padding="20dp">
 
-        <!--  Box customizável em box_personalizado.xml  -->
 
-        <View
-            android:id="@+id/Box"
-            android:layout_width="0dp"
-            android:layout_height="215dp"
-            android:layout_marginStart="16dp"
-            android:layout_marginTop="32dp"
-            android:layout_marginEnd="16dp"
-            android:background="@drawable/box_personalizado"
+        <!-- ============================= -->
+        <!-- CABEÇALHO -->
+        <!-- ============================= -->
 
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="ANDROID • INTENTS"
+            android:textColor="@color/purple_light"
+            android:textSize="13sp"
+            android:textStyle="bold"
+            android:letterSpacing="0.15" />
 
-        <!--  Título 1  -->
         <TextView
             android:id="@+id/title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:fontFamily="sans-serif-black"
-            android:text="INTENTS"
-            android:textAlignment="center"
-            android:textSize="25sp"
+            android:layout_marginTop="8dp"
+            android:text="ENTENDENDO\nINTENTS"
+            android:textColor="@color/text_primary"
+            android:textSize="34sp"
+            android:textStyle="bold"
+            android:fontFamily="sans-serif-black" />
 
-            app:layout_constraintStart_toStartOf="@id/Box"
-            app:layout_constraintEnd_toEndOf="@id/Box"
-            app:layout_constraintTop_toTopOf="@id/Box" />
-
-        <!--  Explicação de intents no gereal  -->
         <TextView
             android:id="@+id/intents"
-            android:layout_width="0dp"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
-            android:layout_marginTop="20dp"
-            android:layout_marginEnd="16dp"
-            android:justificationMode="inter_word"
-            android:text="Intent é um objeto usado no Android para fazer a comunicação entre diferentes partes do aplicativo. Com ele, dá para abrir outra Activity, iniciar alguma ação ou passar informações de uma tela para outra. Também pode ser usado para abrir recursos de outros aplicativos, como o navegador, a câmera ou o e-mail."
+            android:layout_marginTop="16dp"
+            android:text="Intent é um objeto usado no Android para realizar a comunicação entre diferentes partes do aplicativo. Ela pode abrir outras Activities, passar dados ou solicitar ações de outros aplicativos."
+            android:textColor="@color/text_secondary"
+            android:textSize="15sp"
+            android:lineSpacingExtra="4dp" />
 
-            app:layout_constraintStart_toStartOf="@id/Box"
-            app:layout_constraintEnd_toEndOf="@id/Box"
-            app:layout_constraintTop_toBottomOf="@id/title" />
-            <!--  Fim do box personalizado  -->
 
-        <!--  Título 2  -->
+        <!-- ============================= -->
+        <!-- TÍTULO -->
+        <!-- ============================= -->
+
         <TextView
             android:id="@+id/TypesIntents"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="40dp"
-            android:fontFamily="sans-serif-black"
             android:text="TIPOS DE INTENTS"
-            android:textAlignment="center"
-            android:textSize="25sp"
-
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/Box" />
-
-        <!--  Título Explícitas  -->
-        <TextView
-            android:id="@+id/ExplictIntent"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="32dp"
-            android:fontFamily="sans-serif-black"
-            android:text="Intents explícitas"
-
-            android:textAlignment="center"
-            android:textSize="20sp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.062"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/TypesIntents" />
-
-        <!--  Explicação intents explícitas  -->
-        <TextView
-            android:id="@+id/explict"
-            android:layout_width="350dp"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="28dp"
-            android:justificationMode="inter_word"
-
-            android:text="Uma Intent explícita é usada quando você sabe exatamente qual componente deseja abrir.\n\n[Digita aqui o que quiser depois sobre exemplos e etc]\n\n[Pode usar o espaço para fazer o que quiser também, só adicionar o que precisa ou então levar para outra Activity]"
-
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.491"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/ExplictIntent" />
-
-        <!--  Botão de exemplo para executar exemplo  -->
-        <Button
-            android:id="@+id/ExplicitIntentButton"
-            android:layout_width="330dp"
-            android:layout_height="50dp"
-            android:layout_marginTop="30dp"
-            android:text="[Botão para executar exemplo]"
-            android:background="@drawable/botao_personalizado"
-            android:backgroundTint="@null"
-            app:backgroundTint="@null"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/explict" />
-
-        <!--  Título Implícitas -->
-        <TextView
-            android:id="@+id/implicitIntent"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="28dp"
-            android:fontFamily="sans-serif-black"
-
-            android:text="Intents explícitas"
-            android:textAlignment="center"
-            android:textSize="20sp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.062"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/ExplicitIntentButton" />
-
-        <!--  Explicação Intents Implícitas  -->
-        <TextView
-            android:id="@+id/implicit"
-            android:layout_width="350dp"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="28dp"
-            android:justificationMode="inter_word"
-
-            android:text="Uma Intent implícita é utilizada quando não especificamos exatamente qual aplicativo ou componente deverá executar a ação."
-
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.491"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/implicitIntent" />
-
-        <!--  Aviso de exemplo  -->
-        <TextView
-            android:id="@+id/TextoExemplo"
-            android:layout_width="350dp"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="28dp"
-            android:justificationMode="inter_word"
+            android:textColor="@color/text_primary"
+            android:textSize="22sp"
             android:textStyle="bold"
+            android:fontFamily="sans-serif-black" />
 
-            android:text="Exemplo prático: Compartilhar uma mensagem para outro aplicativo"
 
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.491"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/implicit" />
+        <!-- ============================= -->
+        <!-- CARD INTENT EXPLÍCITA -->
+        <!-- ============================= -->
 
-        <!-- Botão de refresh para frases aleatórias -->
-        <ImageButton
-            android:id="@+id/refreshButton"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            android:layout_marginStart="264dp"
-            android:layout_marginTop="16dp"
-            android:background="@android:color/transparent"
-            android:paddingLeft="10dp"
-            android:paddingTop="20dp"
-            android:scaleType="fitCenter"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/clearButton"
-            app:layout_constraintTop_toBottomOf="@+id/TextoExemplo"
-            app:srcCompat="@drawable/refresh_icon" />
-
-        <!--  Botão de limpar texto  -->
-        <ImageButton
-            android:id="@+id/clearButton"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            android:background="@android:color/transparent"
-            android:paddingLeft="10dp"
-            android:paddingTop="17dp"
-            android:scaleType="fitCenter"
-            app:layout_constraintBottom_toBottomOf="@+id/refreshButton"
-            app:layout_constraintEnd_toStartOf="@+id/refreshButton"
-            app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="@+id/refreshButton"
-            app:layout_constraintVertical_bias="1.0"
-            app:srcCompat="@drawable/close_icon" />
-
-        <!--  Campo de Texto editável  -->
-        <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/textInputLayout"
-            android:layout_width="370dp"
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="4dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.606"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/refreshButton">
+            android:layout_marginTop="20dp"
+            app:cardBackgroundColor="@color/surface_dark"
+            app:cardCornerRadius="22dp"
+            app:cardElevation="0dp"
+            app:strokeColor="@color/border_purple"
+            app:strokeWidth="1dp">
 
-            <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/editText"
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="Texto personalizado" />
-        </com.google.android.material.textfield.TextInputLayout>
+                android:orientation="vertical"
+                android:padding="22dp">
 
-        <!--  Botão de compartilhar  -->
-        <Button
-            android:id="@+id/ShareButton"
-            android:padding="2dp"
-            android:layout_width="110dp"
-            android:layout_height="40dp"
-            android:layout_marginStart="24dp"
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="01  •  DESTINO DEFINIDO"
+                    android:textColor="@color/purple_light"
+                    android:textSize="12sp"
+                    android:textStyle="bold"
+                    android:letterSpacing="0.08" />
+
+                <TextView
+                    android:id="@+id/ExplictIntent"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:text="Intent explícita"
+                    android:textColor="@color/text_primary"
+                    android:textSize="22sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/explict"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="14dp"
+                    android:text="Uma Intent explícita é utilizada quando sabemos exatamente qual componente do aplicativo queremos iniciar. Nela, informamos diretamente qual Activity será aberta.\n\nExemplo prático: abrir uma segunda tela do próprio aplicativo e enviar uma informação para ela."
+                    android:textColor="@color/text_secondary"
+                    android:textSize="15sp"
+                    android:lineSpacingExtra="3dp" />
+
+                <Button
+                    android:id="@+id/ExplicitIntentButton"
+                    android:layout_width="match_parent"
+                    android:layout_height="54dp"
+                    android:layout_marginTop="24dp"
+                    android:background="@drawable/button_purple"
+                    android:backgroundTint="@null"
+                    android:text="ABRIR EXEMPLO  →"
+                    android:textColor="@color/white"
+                    android:textStyle="bold"
+                    android:textSize="14sp"
+                    app:backgroundTint="@null" />
+
+            </LinearLayout>
+
+        </com.google.android.material.card.MaterialCardView>
+
+
+        <!-- ============================= -->
+        <!-- CARD INTENT IMPLÍCITA -->
+        <!-- ============================= -->
+
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            app:cardBackgroundColor="@color/surface_dark"
+            app:cardCornerRadius="22dp"
+            app:cardElevation="0dp"
+            app:strokeColor="@color/border_purple"
+            app:strokeWidth="1dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="22dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="02  •  AÇÃO DEFINIDA"
+                    android:textColor="@color/purple_light"
+                    android:textSize="12sp"
+                    android:textStyle="bold"
+                    android:letterSpacing="0.08" />
+
+                <TextView
+                    android:id="@+id/implicitIntent"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:text="Intent implícita"
+                    android:textColor="@color/text_primary"
+                    android:textSize="22sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/implicit"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="14dp"
+                    android:text="Uma Intent implícita é utilizada quando não especificamos exatamente qual aplicativo ou componente deverá executar a ação."
+                    android:textColor="@color/text_secondary"
+                    android:textSize="15sp"
+                    android:lineSpacingExtra="3dp" />
+
+                <TextView
+                    android:id="@+id/TextoExemplo"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:text="EXEMPLO • Compartilhar uma mensagem"
+                    android:textColor="@color/purple_light"
+                    android:textSize="14sp"
+                    android:textStyle="bold" />
+
+
+                <!-- ============================= -->
+                <!-- CAMPO DA MENSAGEM -->
+                <!-- ============================= -->
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/textInputLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="18dp"
+
+                    app:boxBackgroundColor="@color/surface_light"
+                    app:boxBackgroundMode="outline"
+
+                    app:boxCornerRadiusTopStart="16dp"
+                    app:boxCornerRadiusTopEnd="16dp"
+                    app:boxCornerRadiusBottomStart="16dp"
+                    app:boxCornerRadiusBottomEnd="16dp"
+
+                    app:boxStrokeColor="@color/purple_primary"
+                    app:boxStrokeWidth="1dp"
+                    app:boxStrokeWidthFocused="2dp"
+
+                    app:endIconMode="clear_text"
+                    app:endIconTint="@color/purple_light">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/editText"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:minHeight="90dp"
+                        android:gravity="top|start"
+                        android:hint="Digite uma mensagem..."
+                        android:padding="16dp"
+                        android:textColor="@color/text_primary"
+                        android:textColorHint="@color/text_muted"
+                        android:textSize="15sp" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+
+                <!-- ============================= -->
+                <!-- GERAR FRASE -->
+                <!-- ============================= -->
+
+                <Button
+                    android:id="@+id/refreshButton"
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    android:layout_marginTop="12dp"
+                    android:background="@drawable/button_purple"
+                    android:backgroundTint="@null"
+                    android:text="↻  GERAR FRASE ALEATÓRIA"
+                    android:textColor="@color/white"
+                    android:textSize="13sp"
+                    android:textStyle="bold"
+                    app:backgroundTint="@null" />
+
+
+                <!-- ============================= -->
+                <!-- COMPARTILHAR -->
+                <!-- ============================= -->
+
+                <Button
+                    android:id="@+id/ShareButton"
+                    android:layout_width="match_parent"
+                    android:layout_height="54dp"
+                    android:layout_marginTop="18dp"
+                    android:background="@drawable/button_purple"
+                    android:backgroundTint="@null"
+                    android:text="COMPARTILHAR  ↗"
+                    android:textColor="@color/white"
+                    android:textStyle="bold"
+                    app:backgroundTint="@null" />
+
+            </LinearLayout>
+
+        </com.google.android.material.card.MaterialCardView>
+
+
+        <!-- ============================= -->
+        <!-- RODAPÉ -->
+        <!-- ============================= -->
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
             android:layout_marginTop="30dp"
-            android:layout_marginEnd="24dp"
-            android:layout_marginBottom="32dp"
-            android:background="@drawable/botao_personalizado"
-            android:backgroundTint="@null"
-            android:text="Compartilhar"
+            android:layout_marginBottom="20dp"
+            android:gravity="center"
+            android:text="ANDROID • JAVA • INTENTS"
+            android:textColor="@color/text_muted"
+            android:textSize="11sp"
+            android:letterSpacing="0.12" />
 
-            app:backgroundTint="@null"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="1.0"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textInputLayout"
-            app:layout_constraintVertical_bias="1.0" />
-
-    </androidx.constraintlayout.widget.ConstraintLayout>
+    </LinearLayout>
 
 </androidx.core.widget.NestedScrollView>
