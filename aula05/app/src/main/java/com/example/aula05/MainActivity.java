@@ -49,7 +49,7 @@ public class MainActivity extends AppCompatActivity {
         lv.setAdapter(adapter);
 
         lv.setOnItemClickListener((adapterView, view, i, l) -> {
-            Toast.makeText(this, "Você clicou em " + nomes[i], Toast.LENGTH_LONG);
+            Toast.makeText(this, nomes[i], Toast.LENGTH_LONG).show();
         });
     }
 }
