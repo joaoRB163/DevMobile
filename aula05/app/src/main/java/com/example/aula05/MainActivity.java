@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.widget.Adapter;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
+import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -31,13 +32,24 @@ public class MainActivity extends AppCompatActivity {
         lv = findViewById(R.id.listview);
 
         // Criação do adaptador (quem vai construir a informação)
-        ArrayAdapter<String> adapter = new ArrayAdapter<String>(
+        /*ArrayAdapter<String> adapter = new ArrayAdapter<String>(
                 this,
-                android.R.layout.simple_list_item_1, // layout pronto do SDK. CTRL + Botão esquerdo abre o layout
+                android.R.layout.item_lista, // layout pronto do SDK. CTRL + Botão esquerdo abre o layout
                 android.R.id.text1, // elemento que vai receber a informação
                 nomes // array com elementos (dados)
-                );
+                );*/
+
+        ArrayAdapter<String> adapter = new ArrayAdapter<>(
+                this,
+                R.layout.item_lista,
+                R.id.tvnome,
+                nomes
+        );
         // colocando o adaptador na listview
         lv.setAdapter(adapter);
+
+        lv.setOnItemClickListener((adapterView, view, i, l) -> {
+            Toast.makeText(this, "Você clicou em " + nomes[i], Toast.LENGTH_LONG);
+        });
     }
 }
