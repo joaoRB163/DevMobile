@@ -15,7 +15,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/edNome"
         app:layout_editor_absoluteY="121dp"
-        android:paddingHorizontal="5dp"/>
+        android:paddingHorizontal="10dp"/>
 
     <ImageView
         android:id="@+id/imageView"
@@ -25,7 +25,8 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/ic_launcher_background"
-        tools:srcCompat="@tools:sample/avatars" />
+        tools:srcCompat="@tools:sample/avatars"
+        android:paddingHorizontal="10dp"/>
 
     <EditText
         android:id="@+id/edNome"
