@@ -32,8 +32,9 @@ public class MainActivity extends AppCompatActivity {
         lv = findViewById(R.id.listview);
 
         // Criação do adaptador (quem vai construir a informação)
+        // ctrl + q mostra as possibilidades de preenchimento
         /*ArrayAdapter<String> adapter = new ArrayAdapter<String>(
-                this,
+                this, //contexto
                 android.R.layout.item_lista, // layout pronto do SDK. CTRL + Botão esquerdo abre o layout
                 android.R.id.text1, // elemento que vai receber a informação
                 nomes // array com elementos (dados)
