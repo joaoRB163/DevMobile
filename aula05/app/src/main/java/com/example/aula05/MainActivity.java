@@ -39,6 +39,7 @@ public class MainActivity extends AppCompatActivity {
                 nomes // array com elementos (dados)
                 );*/
 
+        // adapter com layout personalizado
         /*ArrayAdapter<String> adapter = new ArrayAdapter<>(
                 this,
                 R.layout.item_lista,
@@ -46,6 +47,7 @@ public class MainActivity extends AppCompatActivity {
                 nomes
         );*/
 
+        // adapter personalizado
         NomesAdapter adapter = new NomesAdapter(
                 this,
                 R.layout.item_lista,
