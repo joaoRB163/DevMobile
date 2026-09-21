@@ -13,7 +13,7 @@ import androidx.core.view.WindowInsetsCompat;
 
 public class MainActivity extends AppCompatActivity {
 
-    String[] nomes = new String[]{"Helena", "Lívia", "Rômulo", "Pedro", "Jão", "Aureo"};
+    String[] nomes = new String[]{"Helena", "Lívia", "Rômulo", "Pedro", "Jão", "Aureo", "Adroaldo"};
 
     ListView lv;
 
