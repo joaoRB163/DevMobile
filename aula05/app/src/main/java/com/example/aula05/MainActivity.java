@@ -1,7 +1,6 @@
 package com.example.aula05;
 
 import android.os.Bundle;
-import android.widget.Adapter;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.Toast;
@@ -40,12 +39,20 @@ public class MainActivity extends AppCompatActivity {
                 nomes // array com elementos (dados)
                 );*/
 
-        ArrayAdapter<String> adapter = new ArrayAdapter<>(
+        /*ArrayAdapter<String> adapter = new ArrayAdapter<>(
                 this,
                 R.layout.item_lista,
-                R.id.tvnome,
+                R.id.edNome,
+                nomes
+        );*/
+
+        NomesAdapter adapter = new NomesAdapter(
+                this,
+                R.layout.item_lista,
+                R.id.edNome,
                 nomes
         );
+
         // colocando o adaptador na listview
         lv.setAdapter(adapter);
 
