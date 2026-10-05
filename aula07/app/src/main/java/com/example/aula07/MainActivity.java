@@ -43,6 +43,6 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
 
     @Override
     public void onSensorChanged(SensorEvent sensorEvent) {
-        tv.setText(Float.toString(sensorEvent.values[0]) + " / " + sensorEvent.values[1] + " / " + sensorEvent.values[2]);
+        tv.setText(Float.toString(sensorEvent.values[0]) + " / " + (sensorEvent.values[1]) + " / " + sensorEvent.values[2]);
     }
 }
